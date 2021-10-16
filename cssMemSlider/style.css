@@ -1,0 +1,24 @@
+html {
+    font-size: 15px;
+
+}
+
+body {
+    background-color: #0D1117;
+    
+}
+
+.wrapper {
+    padding: 3rem 3rem;
+}
+
+.slides {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
