@@ -1,24 +1,125 @@
 html {
+    font-family: 'Slabo 27px', serif;
     font-size: 15px;
 
 }
 
 body {
-    background-color: #0D1117;
+    background-color: #fbfbfb;
+    margin: 0;
+    
     
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+
+    display: flex
+}
+
 .wrapper {
+    margin: auto;
+    width: 85%;
     padding: 3rem 3rem;
+    vertical-align: middle;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+.slider {
+    margin-bottom: 3rem;
 }
 
 .slides {
+    font-size: 0px;
+    
+    display: none;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     height: auto;
+
+    
 }
 
 .slides img {
+    padding: 2px;
     width: 100%;
     height: auto;
+
+
+    border: 10px #838383 solid;
+    border-radius: 3%;
+}
+
+.content {
+    display: inline-block;
+    width: 70%;
+}
+
+.text-slides {
+    font-family: 'Slabo 27px', serif;
+    display: none;
+    color: #333;
+    font-size: 3rem;
+}
+
+
+
+.controls {
+    padding-top: 1rem;
+    display: inline-flex;
+    height: 20px;   
+    width: 29%;
+    justify-content: flex-end;
+    vertical-align: top;
+    
+    
+}
+
+.controls > label {
+    margin: 0 .3rem;
+    display: block;
+    height: 20px;
+    width: 20px;
+
+    background-color: #333;
+
+    cursor: pointer;
+
+
+}
+
+.controls label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: red;
+}
+
+
+#slide1:checked ~ .content > .text-slide1,
+#slide2:checked ~ .content > .text-slide2,
+#slide3:checked ~ .content > .text-slide3,
+#slide4:checked ~ .content > .text-slide4,
+#slide5:checked ~ .content > .text-slide5 {
+    display: block;
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+    display: block;
 }
