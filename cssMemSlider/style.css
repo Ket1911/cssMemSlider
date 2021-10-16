@@ -20,15 +20,18 @@ body {
 .page {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 
     display: flex
 }
 
 .wrapper {
+    
     margin: auto;
-    width: 85%;
+    width: 65%;
     padding: 3rem 3rem;
     vertical-align: middle;
+    
 }
 
 .wrapper > input {
@@ -36,7 +39,7 @@ body {
 }
 
 .slider {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .slides {
@@ -44,8 +47,10 @@ body {
     
     display: none;
     margin: 0 auto;
-    width: 100%;
-    height: auto;
+    /* width: 100%;
+    height: auto; */
+    height: 70%;
+    width: auto;
 
     transition: all 1s linear;
 
@@ -59,18 +64,22 @@ body {
     width: 100%;
     height: auto;
 
-
-    border: 10px #838383 solid;
-    border-radius: 3%;
-}
-
-.slides img:hover {
     
+
+
+    border: 10px #fffefe solid;
+    border-radius: 3%;
+
+    -webkit-box-shadow: 0px 13px 15px 10px rgba(34, 60, 80, 0.38);
+    -moz-box-shadow: 0px 13px 15px 10px rgba(34, 60, 80, 0.38);
+    box-shadow: 0px 13px 15px 10px rgba(34, 60, 80, 0.38);
 }
+
+
 
 .content {
     display: inline-block;
-    width: 70%;
+    width: 58%;
     min-height: 170px;
 
 }  
@@ -79,7 +88,7 @@ body {
     font-family: 'Slabo 27px', serif;
     display: none;
     color: #333;
-    font-size: 3rem;
+    font-size: 2rem;
     animation: 1s ease-in-out;
 
 }
@@ -90,7 +99,7 @@ body {
     padding-top: 1rem;
     display: inline-flex;
     height: 20px;   
-    width: 29%;
+    width: 37%;
     min-height: 170px;
     justify-content: flex-end;
     vertical-align: top;
@@ -99,7 +108,6 @@ body {
 }
 
 .controls > label {
-    margin: 0 .3rem;
     padding: .7rem;
     display: block;
     height: 50px;
@@ -202,12 +210,99 @@ body {
 
 @keyframes show {
     from {
-        opacity: .5;
-        transform: translateX(-150%);
+        opacity: 0;
+        transform: translateX(-50%);
         
     }
     to {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+@media (max-width: 1300px) {
+    .wrapper {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+
+    html {
+    font-size: 10px;
+
+    }
+
+    .page {
+        overflow: visible;
+    }
+
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slider {
+        order: 1;
+
+    }
+
+    .content {
+        width: 100%;
+        min-height: auto;
+
+        order: 3;
+    }
+    
+    .controls {
+        width: 100%;
+        min-height: 50px;
+        margin-bottom: 5rem;
+
+        justify-content: center;
+        order: 2;
+        
+    }
+    
+}
+
+
+@media (orientation: portrait) {
+    .page {
+        display: block;
+        height: 100vh;
+    }
+
+    .controls > label {
+        padding: .5rem;
+        
+        height: 28px;
+        width: 28px;
+  
+    }
+    
+    .dot {
+        
+        height: 18px;
+        width: 18px;
+    
+        border: 3px #838383 solid;
+    
+    }
+
+    #slide1:checked ~ .controls .dot1,
+    #slide2:checked ~ .controls .dot2,
+    #slide3:checked ~ .controls .dot3,
+    #slide4:checked ~ .controls .dot4,  
+    #slide5:checked ~ .controls .dot5 {
+	
+        border: 3px #8b0303 solid;
+    }
+    
+
+
 }
